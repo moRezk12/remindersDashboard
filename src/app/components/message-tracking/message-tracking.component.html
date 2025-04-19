@@ -1,0 +1,48 @@
+<div class="message-tracking-container mat-elevation-z8  ">
+
+  <mat-form-field appearance="outline" class="search" style="width: 100%; margin-bottom: 1rem;">
+    <mat-label>Search by Patient, Status...</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex: John or Sent">
+  </mat-form-field>
+
+  <mat-table [dataSource]="dataSource">
+
+    <!-- Patient Column -->
+    <ng-container matColumnDef="patient">
+      <mat-header-cell *matHeaderCellDef> Patient Name/ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.patient}} </mat-cell>
+    </ng-container>
+
+    <!-- Appointment Column -->
+    <ng-container matColumnDef="appointment">
+      <mat-header-cell *matHeaderCellDef> Appointment </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.appointment | date:'short'}} </mat-cell>
+    </ng-container>
+
+    <!-- Reminder Type Column -->
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef> Reminder Type </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span [ngClass]="element.status.toLowerCase()">{{element.status}}</span>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Sent Time Column -->
+    <ng-container matColumnDef="sentTime">
+      <mat-header-cell *matHeaderCellDef> Sent Time </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.sentTime | date:'short'}} </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+
+</div>

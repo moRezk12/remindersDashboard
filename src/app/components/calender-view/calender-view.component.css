@@ -1,0 +1,10 @@
+/* calender-view.component.css */
+:host {
+  display: block;
+  padding: 1rem;
+}
+
+mat-card {
+  padding: 1rem;
+  background-color: #fafafa;
+}

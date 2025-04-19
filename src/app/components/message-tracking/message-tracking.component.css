@@ -1,0 +1,26 @@
+.message-tracking-container {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+input{
+  padding: 10px;
+}
+
+.sent {
+  color: green;
+}
+
+.delivered {
+  color: blue;
+}
+
+.failed {
+  color: red;
+}
+
+.queued {
+  color: orange;
+}
+
