@@ -1,1 +1,58 @@
-<full-calendar [options]="calendarOptions"></full-calendar>
+<section>
+
+  <button class="navigate-btn">
+    <a routerLink="message">Next Page</a>
+  </button>
+
+  <div class="table-container">
+    <h2>Appointments Table</h2>
+
+    <div class="filters">
+      <input [(ngModel)]="filterName" placeholder="Search by patient name" />
+      <input [(ngModel)]="filterDoctor" placeholder="Search by doctor name" />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Patient Name</th>
+          <th>Date</th>
+          <th>Doctor</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let appointment of filteredAppointments">
+          <tr (click)="toggleReminders(appointment)">
+            <td>{{ appointment.name }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.doctor }}</td>
+            <td>{{ appointment.status }}</td>
+          </tr>
+
+          <tr class="reminder-row" *ngIf="appointment.showReminders">
+            <td colspan="4">
+              <table class="reminder-table">
+                <thead>
+                  <tr>
+                    <th>Reminder</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let r of appointment.reminders">
+                    <td>{{ r.title }}</td>
+                    <td>{{ r.time }}</td>
+                    <td>{{ r.status }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+</section>

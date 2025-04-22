@@ -1,24 +1,94 @@
-.message-tracking-container {
+.navigate-btn {
+  display: inline-block;
+  margin: 20px ;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navigate-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.navigate-btn:hover {
+  background-color: #0056b3;
+}
+
+.table-container {
+  margin: 30px auto;
   padding: 20px;
-  background: white;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.table-container h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff;
+  cursor: pointer;
+}
+
+.checkbox.delivered {
+  accent-color: #28a745;
+}
+
+.checkbox.read {
+  accent-color: #6f42c1;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
   border-radius: 8px;
   margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-
-.sent {
-  color: green;
+.btn:hover {
+  background-color: #0056b3;
 }
-
-.delivered {
-  color: blue;
-}
-
-.failed {
-  color: red;
-}
-
-.queued {
-  color: orange;
-}
-
